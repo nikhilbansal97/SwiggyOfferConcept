@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/listItemContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:padding="8dp"
+    >
+
+  <ImageView
+      android:id="@+id/ivFoodImage"
+      android:layout_width="100dp"
+      android:layout_height="100dp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:srcCompat="@drawable/food"
+      />
+
+  <TextView
+      android:id="@+id/tvFoodTitle"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="12dp"
+      android:textSize="14sp"
+      android:textStyle="bold"
+      app:layout_constraintStart_toEndOf="@id/ivFoodImage"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:text="Pasta"
+      />
+
+  <TextView
+      android:id="@+id/tvFoodCategory"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"
+      app:layout_constraintStart_toStartOf="@id/tvFoodTitle"
+      app:layout_constraintTop_toBottomOf="@id/tvFoodTitle"
+      tools:text="Snacks"
+      />
+
+  <com.app.nikhil.swiggyofferconcept.RotatingStarView
+      android:id="@+id/ivOfferStar"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"
+      app:layout_constraintStart_toStartOf="@id/tvFoodTitle"
+      app:layout_constraintTop_toBottomOf="@id/tvFoodCategory"
+      />
+
+  <TextView
+      android:id="@+id/tvOfferText"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="8dp"
+      app:layout_constraintStart_toEndOf="@id/ivOfferStar"
+      app:layout_constraintTop_toBottomOf="@id/tvFoodCategory"
+      android:text="@string/offer_text"
+      />
+
+</android.support.constraint.ConstraintLayout>
