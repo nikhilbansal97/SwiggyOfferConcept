@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import com.app.nikhil.swiggyofferconcept.FoodRvAdapter.FoodItemViewHolder
 import kotlinx.android.synthetic.main.layout_food_list_item.view.ivFoodImage
 import kotlinx.android.synthetic.main.layout_food_list_item.view.ivOfferStar
@@ -36,7 +37,7 @@ class FoodRvAdapter(
     viewHolder.bind(foodList[position])
   }
 
-  fun itemScrolled(
+  fun recyclerViewScrolled(
     recyclerView: RecyclerView,
     isScrolledUp: Boolean
   ) {
@@ -54,7 +55,15 @@ class FoodRvAdapter(
     }
 
     fun rotateOfferView(isScrolledUp: Boolean) {
-      itemView.ivOfferStar.rotateMe(isScrolledUp)
+      itemView.ivOfferStar.rotate(isScrolledUp)
     }
+  }
+}
+
+fun ImageView.rotate(isScrolledUp: Boolean) {
+  if (isScrolledUp) {
+    rotation += 5
+  } else {
+    rotation -= 5
   }
 }

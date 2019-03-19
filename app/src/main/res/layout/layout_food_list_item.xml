@@ -41,14 +41,14 @@
       tools:text="Snacks"
       />
 
-  <com.app.nikhil.swiggyofferconcept.RotatingStarView
+  <ImageView
       android:id="@+id/ivOfferStar"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginTop="8dp"
       app:layout_constraintStart_toStartOf="@id/tvFoodTitle"
       app:layout_constraintTop_toBottomOf="@id/tvFoodCategory"
-      />
+      app:srcCompat="@drawable/ic_star"/>
 
   <TextView
       android:id="@+id/tvOfferText"

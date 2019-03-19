@@ -5,8 +5,6 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.RecyclerView.OnScrollListener
-import android.util.Log
-import com.app.nikhil.swiggyofferconcept.FoodRvAdapter.FoodItemViewHolder
 import kotlinx.android.synthetic.main.activity_main.rvFood
 
 class MainActivity : AppCompatActivity() {
@@ -25,7 +23,7 @@ class MainActivity : AppCompatActivity() {
           dx: Int,
           dy: Int
         ) {
-          adapter.itemScrolled(recyclerView, dy > 0)
+          adapter.recyclerViewScrolled(recyclerView, dy > 0)
         }
       })
     }
