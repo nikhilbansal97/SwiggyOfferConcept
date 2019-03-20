@@ -59,7 +59,3 @@ class FoodRvAdapter(
     }
   }
 }
-
-fun ImageView.rotate(scrollAmount: Int) {
-  rotation += scrollAmount
-}
