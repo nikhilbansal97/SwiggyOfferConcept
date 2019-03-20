@@ -39,12 +39,12 @@ class FoodRvAdapter(
 
   fun recyclerViewScrolled(
     recyclerView: RecyclerView,
-    isScrolledUp: Boolean
+    scrollAmount: Int
   ) {
     var holder: FoodItemViewHolder?
     for (i in 0..foodList.size) {
       holder = recyclerView.findViewHolderForLayoutPosition(i) as FoodItemViewHolder?
-      holder?.rotateOfferView(isScrolledUp)
+      holder?.rotateOfferView(scrollAmount)
     }
   }
 
@@ -54,16 +54,12 @@ class FoodRvAdapter(
       itemView.tvFoodCategory.text = food.category
     }
 
-    fun rotateOfferView(isScrolledUp: Boolean) {
-      itemView.ivOfferStar.rotate(isScrolledUp)
+    fun rotateOfferView(scrollAmount: Int) {
+      itemView.ivOfferStar.rotate(scrollAmount)
     }
   }
 }
 
-fun ImageView.rotate(isScrolledUp: Boolean) {
-  if (isScrolledUp) {
-    rotation += 5
-  } else {
-    rotation -= 5
-  }
+fun ImageView.rotate(scrollAmount: Int) {
+  rotation += scrollAmount
 }

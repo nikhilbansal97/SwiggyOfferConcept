@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
           dx: Int,
           dy: Int
         ) {
-          adapter.recyclerViewScrolled(recyclerView, dy > 0)
+          adapter.recyclerViewScrolled(recyclerView, dy)
         }
       })
     }
