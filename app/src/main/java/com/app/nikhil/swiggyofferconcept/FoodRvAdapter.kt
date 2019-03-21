@@ -2,6 +2,7 @@ package com.app.nikhil.swiggyofferconcept
 
 import android.content.Context
 import android.support.constraint.ConstraintSet
+import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.RecyclerView.ViewHolder
 import android.util.Log
@@ -42,7 +43,9 @@ class FoodRvAdapter(
     scrollAmount: Int
   ) {
     var holder: FoodItemViewHolder?
-    for (i in 0..foodList.size) {
+    val startPos = (recyclerView.layoutManager as LinearLayoutManager).findFirstVisibleItemPosition()
+    val endPos = (recyclerView.layoutManager as LinearLayoutManager).findLastVisibleItemPosition()
+    for (i in startPos .. endPos) {
       holder = recyclerView.findViewHolderForLayoutPosition(i) as FoodItemViewHolder?
       holder?.rotateOfferView(scrollAmount)
     }
